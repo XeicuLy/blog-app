@@ -36,9 +36,13 @@ export const client = createClient({
  * ブログ一覧を取得する関数
  */
 export const getBlogs = async (queries?: MicroCMSQueries) => {
-  const blogData = await client.getList<Blog>({
-    endpoint: 'blogs',
-    queries,
-  });
-  return blogData;
+  try {
+    const blogData = await client.getList<Blog>({
+      endpoint: 'blogs',
+      queries,
+    });
+    return blogData;
+  } catch (error) {
+    console.error(error);
+  }
 };
