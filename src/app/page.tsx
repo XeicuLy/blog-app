@@ -6,8 +6,6 @@ export default async function Home() {
     endpoint: 'test',
   });
 
-  console.log(data);
-
   return (
     <>
       <h1>こんにちは</h1>
