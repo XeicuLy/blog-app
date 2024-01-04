@@ -6,7 +6,10 @@ import { formatDate } from '@/lib/date';
 export const revalidate = 0;
 
 export default async function Home() {
-  const { contents } = await getBlogs();
+  const data = await getBlogs();
+  if (!data) throw new Error('not found');
+  const { contents } = data;
+
   return (
     <>
       <ul className='mx-auto my-0 max-w-screen-sm'>
