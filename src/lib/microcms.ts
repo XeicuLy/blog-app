@@ -40,6 +40,5 @@ export const getBlogs = async (queries?: MicroCMSQueries) => {
     endpoint: 'blogs',
     queries,
   });
-  await new Promise((resolve) => setTimeout(resolve, 3000));
   return blogData;
 };
