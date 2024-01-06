@@ -14,16 +14,18 @@ type Author = {
   MicroCMSDate;
 
 export type Blog = {
-  createdAt: string;
-  publishedAt: string;
+  id: MicroCMSContentId;
   title: string;
   content: string;
   thumbnail?: MicroCMSImage;
   tags?: Tag[];
   author?: Author;
+  createdAt: string;
+  publishedAt: string;
+  updatedAt: string;
 };
 
-export type Article = Blog & MicroCMSContentId & MicroCMSDate;
+export type Article = Blog & MicroCMSDate;
 
 if (!process.env.MICRO_CMS_SERVICE_DOMAIN) {
   throw new Error('MICRO_CMS_SERVICE_DOMAIN is required');
