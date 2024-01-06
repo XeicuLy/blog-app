@@ -7,6 +7,8 @@ type Props = {
   };
 };
 
+export const revalidate = 0;
+
 export default async function Page({ params }: Props) {
   const blog = await getBlog(params.slug);
   if (!blog) throw new Error('not found');
