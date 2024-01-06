@@ -6,9 +6,13 @@ export const formatRichText = (richText: string) => {
   const document = dom.window.document;
   const elements = document.querySelectorAll('pre code');
   elements.forEach((elm) => {
-    if (elm.textContent !== null) {
-      const res = hljs.highlightAuto(elm.textContent);
-      elm.innerHTML = res.value;
+    try {
+      if (elm.textContent !== null) {
+        const res = hljs.highlightAuto(elm.textContent);
+        elm.innerHTML = res.value;
+      }
+    } catch (error) {
+      console.error('highlightAuto error:', error);
     }
   });
   return dom.serialize();
