@@ -29,7 +29,7 @@ export default async function Home() {
                   />
                   <img
                     src={blog.thumbnail?.url || `/no-image.png`}
-                    alt=''
+                    alt={blog.title}
                     width={blog.thumbnail?.width}
                     height={blog.thumbnail?.height}
                   />
