@@ -45,7 +45,9 @@ export const getBlogs = async (queries?: MicroCMSQueries) => {
     });
     return blogData;
   } catch (error) {
+    const userFriendlyMessage = 'ブログの読み込みに失敗しました。後ほど再試行してください。';
     console.error(error);
+    throw new Error(userFriendlyMessage);
   }
 };
 
@@ -62,6 +64,8 @@ export const getBlog = async (contentId: string, queries?: MicroCMSQueries) => {
     });
     return blogData;
   } catch (error) {
+    const userFriendlyMessage = 'ブログの読み込みに失敗しました。後ほど再試行してください。';
     console.error(error);
+    throw new Error(userFriendlyMessage);
   }
 };
