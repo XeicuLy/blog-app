@@ -51,7 +51,7 @@ export const getBlogs = async (queries?: MicroCMSQueries) => {
     return blogData;
   } catch (error) {
     console.error(error);
-    notFound();
+    return notFound();
   }
 };
 
@@ -69,6 +69,6 @@ export const getBlog = async (contentId: string, queries?: MicroCMSQueries) => {
     return blogData;
   } catch (error) {
     console.error(error);
-    notFound();
+    return notFound();
   }
 };

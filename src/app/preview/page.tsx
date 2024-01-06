@@ -13,7 +13,7 @@ export const revalidate = 0;
 
 export default async function Page({ searchParams }: Props) {
   if (!searchParams.slug || !searchParams.draftKey) {
-    notFound();
+    return notFound();
   }
   const data = await getBlog(searchParams.slug, {
     draftKey: searchParams.draftKey,
