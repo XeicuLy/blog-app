@@ -1,6 +1,7 @@
 import { formatDate } from '@/lib/date';
 import { type Article } from '@/lib/microcms';
 import { formatRichText } from '@/lib/parse';
+import './index.css';
 
 type Props = {
   data: Article;
@@ -45,6 +46,7 @@ const Article = ({ data }: Props) => {
         <img src={data.thumbnail?.url} alt={data.title} width={data.thumbnail?.width} height={data.thumbnail?.height} />
       </picture>
       <div
+        className='content w-720'
         dangerouslySetInnerHTML={{
           __html: `${formatRichText(data.content)}`,
         }}

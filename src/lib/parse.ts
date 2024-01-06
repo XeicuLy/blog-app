@@ -7,12 +7,17 @@ export const formatRichText = (richText: string) => {
   const elements = document.querySelectorAll('pre code');
   elements.forEach((elm) => {
     try {
-      if (elm.textContent !== null) {
-        const res = hljs.highlightAuto(elm.textContent);
-        elm.innerHTML = res.value;
+      const classAttr = elm.getAttribute('class');
+      let res;
+      if (classAttr && /^language-/.test(classAttr)) {
+        const language = classAttr.replace(/^language-/, '');
+        res = hljs.highlight(elm.textContent || '', { language });
+      } else {
+        res = hljs.highlightAuto(elm.textContent || '');
       }
+      elm.innerHTML = res.value;
     } catch (error) {
-      console.error('highlightAuto error:', error);
+      console.error('highlight error:', error);
     }
   });
   return dom.serialize();
