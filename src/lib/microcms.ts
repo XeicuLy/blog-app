@@ -1,5 +1,5 @@
+import type { MicroCMSContentId, MicroCMSDate, MicroCMSImage, MicroCMSQueries } from 'microcms-js-sdk';
 import { createClient } from 'microcms-js-sdk';
-import type { MicroCMSQueries, MicroCMSImage, MicroCMSDate, MicroCMSContentId } from 'microcms-js-sdk';
 
 type Tag = {
   name: string;
@@ -14,6 +14,8 @@ type Author = {
   MicroCMSDate;
 
 export type Blog = {
+  createdAt: string;
+  publishedAt: string;
   title: string;
   content: string;
   thumbnail?: MicroCMSImage;
@@ -43,6 +45,27 @@ export const getBlogs = async (queries?: MicroCMSQueries) => {
     });
     return blogData;
   } catch (error) {
+    const userFriendlyMessage = 'ブログの読み込みに失敗しました。後ほど再試行してください。';
     console.error(error);
+    throw new Error(userFriendlyMessage);
+  }
+};
+
+/**
+ * ブログの詳細を取得する関数
+ * @param contentId ブログのID
+ */
+export const getBlog = async (contentId: string, queries?: MicroCMSQueries) => {
+  try {
+    const blogData = await client.get<Blog>({
+      endpoint: 'blogs',
+      contentId,
+      queries,
+    });
+    return blogData;
+  } catch (error) {
+    const userFriendlyMessage = 'ブログの読み込みに失敗しました。後ほど再試行してください。';
+    console.error(error);
+    throw new Error(userFriendlyMessage);
   }
 };
