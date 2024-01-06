@@ -23,6 +23,8 @@ export type Blog = {
   author?: Author;
 };
 
+export type Article = Blog & MicroCMSContentId & MicroCMSDate;
+
 if (!process.env.MICRO_CMS_SERVICE_DOMAIN) {
   throw new Error('MICRO_CMS_SERVICE_DOMAIN is required');
 }
