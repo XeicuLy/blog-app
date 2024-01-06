@@ -5,11 +5,17 @@ import Pagination from '@app/_components/Pagination';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const revalidate = 0;
+type Props = {
+  params: {
+    current: string;
+  };
+};
 
-export default async function Home() {
+export default async function Page({ params }: Props) {
+  const current = parseInt(params.current, 10);
   const data = await getBlogs({
     limit: VIEW_COUNT_PER_PAGE,
+    offset: (current - 1) * VIEW_COUNT_PER_PAGE,
   });
   if (!data) throw new Error('not found');
   const { contents } = data;
@@ -49,7 +55,7 @@ export default async function Home() {
           </li>
         ))}
       </ul>
-      <Pagination totalCount={data.totalCount} />
+      <Pagination totalCount={data.totalCount} current={current} />
     </div>
   );
 }
