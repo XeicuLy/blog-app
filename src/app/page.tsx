@@ -15,7 +15,7 @@ export default async function Home() {
       <ul className='mx-auto my-0 max-w-screen-sm'>
         {contents.map((blog) => (
           <li key={blog.id} className='rounded-md border p-4 shadow'>
-            <Link href={`/${blog.id}`} className='text-blue-500 hover:underline'>
+            <Link href={`/blog/${blog.id}`} className='text-blue-500 hover:underline'>
               {blog.thumbnail ? (
                 <picture>
                   <source
