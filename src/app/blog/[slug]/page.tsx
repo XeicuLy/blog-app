@@ -11,7 +11,7 @@ type Props = {
 export default async function Article({ params }: Props) {
   const blog = await getBlog(params.slug);
   if (!blog) throw new Error('not found');
-  console.log(blog);
+
   return (
     <>
       <main className='p-6'>
