@@ -1,5 +1,6 @@
 import { formatDate } from '@/lib/date';
 import { Article } from '@/lib/microcms';
+import Tag from '@app/_components/Tag';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -34,6 +35,9 @@ const ListItem = ({ article }: Props) => {
         )}
         <dl>
           <dt>{article.title}</dt>
+          <dd>
+            <Tag tags={article.tags} hasLink={false} />
+          </dd>
           <dd>{formatDate(article.publishedAt || article.createdAt)}</dd>
         </dl>
       </Link>
