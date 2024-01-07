@@ -1,7 +1,7 @@
 import js from '@eslint/js';
-import eslintConfigPrettier from 'eslint-config-prettier';
 import tsEsLintPlugin from '@typescript-eslint/eslint-plugin';
 import tsEsLintParser from '@typescript-eslint/parser';
+import eslintConfigPrettier from 'eslint-config-prettier';
 import globals from 'globals';
 
 const config = [
