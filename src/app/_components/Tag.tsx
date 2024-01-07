@@ -13,7 +13,9 @@ const Tag = ({ tags, hasLink = true }: Props) => {
   return (
     <ul>
       {tags.map((tag) => (
-        <TagItem key={tag.id} tag={tag} hasLink={hasLink} />
+        <li key={tag.id}>
+          <TagItem tag={tag} hasLink={hasLink} />
+        </li>
       ))}
     </ul>
   );

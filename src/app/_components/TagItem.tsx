@@ -7,7 +7,10 @@ type Props = {
 };
 
 const TagItem = ({ tag, hasLink = true }: Props) => {
-  return <li>{hasLink ? <Link href={`/tags/${tag.id}`}>#{tag.name}</Link> : <span>#{tag.name}</span>}</li>;
+  if (hasLink) {
+    return <Link href={`/tags/${tag.id}`}>#{tag.name}</Link>;
+  }
+  return <span>#{tag.name}</span>;
 };
 
 export default TagItem;
