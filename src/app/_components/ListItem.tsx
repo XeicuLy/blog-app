@@ -11,7 +11,7 @@ type Props = {
 const ListItem = ({ article }: Props) => {
   return (
     <li>
-      <Link href={`/blog/${article.id}`}>
+      <Link href={`/blog/${article.id.id}`}>
         {article.thumbnail ? (
           <picture>
             <source
