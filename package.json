@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint --config eslint.config.mjs --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "test": "vitest",
     "prepare": "husky install"
   },
@@ -29,6 +30,8 @@
   "devDependencies": {
     "@eslint/js": "^8.56.0",
     "@testing-library/react": "^14.1.2",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint__js": "^8.42.3",
     "@types/jsdom": "^21.1.6",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -51,8 +54,10 @@
     "vitest": "^1.1.1"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "npx eslint --fix",
-    "*.{js,jsx,ts,tsx,json}": "npx prettier --write"
+    "*.{js,jsx,ts,tsx}": [
+      "pnpm lint --",
+      "pnpm format"
+    ]
   },
   "volta": {
     "node": "20.10.0",
