@@ -2,7 +2,7 @@ import type { MicroCMSContentId, MicroCMSDate, MicroCMSImage, MicroCMSQueries } 
 import { createClient } from 'microcms-js-sdk';
 import { notFound } from 'next/navigation';
 
-type Tag = {
+export type Tag = {
   name: string;
 } & MicroCMSContentId &
   MicroCMSDate;

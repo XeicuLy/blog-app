@@ -1,7 +1,8 @@
 import { formatDate } from '@/lib/date';
 import { type Article } from '@/lib/microcms';
 import { formatRichText } from '@/lib/parse';
-import './index.css';
+import Tag from '@app/_components/Tag';
+import styles from './index.module.css';
 
 type Props = {
   data: Article;
@@ -11,6 +12,7 @@ const Article = ({ data }: Props) => {
   return (
     <main>
       <h1>{data.title}</h1>
+      <Tag tags={data.tags} />
       <div>
         {data.author && (
           <div>
@@ -46,7 +48,7 @@ const Article = ({ data }: Props) => {
         <img src={data.thumbnail?.url} alt={data.title} width={data.thumbnail?.width} height={data.thumbnail?.height} />
       </picture>
       <div
-        className='content w-720'
+        className={styles.content}
         dangerouslySetInnerHTML={{
           __html: `${formatRichText(data.content)}`,
         }}
