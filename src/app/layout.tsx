@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 
 import Footer from '@/app/_components/common/Footer';
 import Header from '@/app/_components/common/Header';
-import Navigation from '@/app/_components/common/Navigation';
 import { getTagList } from '@/lib/microcms';
 import { VIEW_COUNT_PER_PAGE } from '@/utils/constants';
 
@@ -39,8 +38,7 @@ export default async function RootLayout({ children }: Props) {
   return (
     <html lang='ja'>
       <body className={inter.className}>
-        <Header />
-        <Navigation tags={contents} />
+        <Header tags={contents} />
         <main>{children}</main>
         <Footer />
       </body>
