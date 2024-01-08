@@ -1,5 +1,6 @@
 'use client';
 
+import { useSearchParams } from 'next/navigation';
 import { useCallback, useRef, useState } from 'react';
 
 const SearchField = () => {
@@ -15,6 +16,8 @@ const SearchField = () => {
     [composing],
   );
   const inputRef = useRef<HTMLInputElement>(null);
+  const searchParams = useSearchParams();
+  const defaultQuery = searchParams.get('q') || '';
 
   return (
     <input
@@ -25,6 +28,7 @@ const SearchField = () => {
       onKeyDown={_onEnter}
       onCompositionStart={startComposition}
       onCompositionEnd={endComposition}
+      defaultValue={defaultQuery}
     />
   );
 };
