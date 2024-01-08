@@ -55,8 +55,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "pnpm lint --",
-      "pnpm format"
+      "ESLINT_USE_FLAT_CONFIG=true eslint --config eslint.config.mjs --fix",
+      "prettier --write"
     ]
   },
   "volta": {
