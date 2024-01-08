@@ -75,6 +75,22 @@ export const getBlog = async (contentId: string, queries?: MicroCMSQueries) => {
 };
 
 /**
+ * タグの一覧を取得する関数
+ */
+export const getTagList = async (queries?: MicroCMSQueries) => {
+  try {
+    const tagData = await client.getList<Tag>({
+      endpoint: 'tags',
+      queries,
+    });
+    return tagData;
+  } catch (error) {
+    console.error(error);
+    return notFound();
+  }
+};
+
+/**
  * タグの詳細を取得する関数
  */
 export const getTag = async (contentId: string, queries?: MicroCMSQueries) => {

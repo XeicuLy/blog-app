@@ -1,4 +1,4 @@
-import Tag from '@/app/_components/Tag';
+import TagList from '@/app/_components/TagList';
 import { formatDate } from '@/lib/date';
 import { type Article } from '@/lib/microcms';
 import { formatRichText } from '@/lib/parse';
@@ -13,7 +13,7 @@ const Article = ({ data }: Props) => {
   return (
     <main>
       <h1>{data.title}</h1>
-      <Tag tags={data.tags} />
+      <TagList tags={data.tags} />
       <div>
         {data.author && (
           <div>
