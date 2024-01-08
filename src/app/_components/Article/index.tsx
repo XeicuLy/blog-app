@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import Profile from '@/app/_components/Profile';
 import TagList from '@/app/_components/TagList';
 import { formatDate } from '@/lib/date';
@@ -22,16 +24,27 @@ const Article = ({ data }: Props) => {
         </div>
       </div>
       <picture>
-        <source
-          type='image/webp'
-          media='(max-width: 640px)'
-          srcSet={`${data.thumbnail?.url}?fm=webp&w=414 1x, ${data.thumbnail?.url}?fm=webp&w=414&dpr=2 2x`}
-        />
-        <source
-          type='image/webp'
-          srcSet={`${data.thumbnail?.url}?fm=webp&fit=crop&w=960&h=504 1x, ${data.thumbnail?.url}?fm=webp&fit=crop&w=960&h=504&dpr=2 2x`}
-        />
-        <img src={data.thumbnail?.url} alt={data.title} width={data.thumbnail?.width} height={data.thumbnail?.height} />
+        {data.thumbnail ? (
+          <>
+            <source
+              type='image/webp'
+              media='(max-width: 640px)'
+              srcSet={`${data.thumbnail.url}?fm=webp&w=414 1x, ${data.thumbnail.url}?fm=webp&w=414&dpr=2 2x`}
+            />
+            <source
+              type='image/webp'
+              srcSet={`${data.thumbnail.url}?fm=webp&fit=crop&w=960&h=504 1x, ${data.thumbnail.url}?fm=webp&fit=crop&w=960&h=504&dpr=2 2x`}
+            />
+            <Image
+              src={data.thumbnail.url}
+              alt={data.title}
+              width={data.thumbnail.width}
+              height={data.thumbnail.height}
+            />
+          </>
+        ) : (
+          <Image src='/no-image.png' alt='No Image' width={500} height={500} />
+        )}
       </picture>
       <div
         className={styles.content}
