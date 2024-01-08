@@ -24,7 +24,7 @@ const ArticleListItem = ({ article }: Props) => {
               type='image/webp'
               srcSet={`${article.thumbnail?.url}?fm=webp&fit=crop&w=240&h=126 1x, ${article.thumbnail?.url}?fm=webp&fit=crop&w=240&h=126&dpr=2 2x`}
             />
-            <img
+            <Image
               src={article.thumbnail?.url || process.env.NO_IMAGE_PATH || '/no-image.png'}
               alt={article.title}
               width={article.thumbnail?.width}
