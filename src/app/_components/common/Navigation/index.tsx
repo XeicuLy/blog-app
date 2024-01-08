@@ -1,4 +1,4 @@
-import SearchField from '@/app/_components/SearchField';
+import SearchField from '@/app/_components/common/SearchField';
 import TagList from '@/app/_components/TagList';
 import { Tag } from '@/lib/microcms';
 

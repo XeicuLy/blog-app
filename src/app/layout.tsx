@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 
 import Footer from '@/app/_components/common/Footer';
 import Header from '@/app/_components/common/Header';
-import Navigation from '@/app/_components/Navigation';
+import Navigation from '@/app/_components/common/Navigation';
 import { getTagList } from '@/lib/microcms';
 import { VIEW_COUNT_PER_PAGE } from '@/utils/constants';
 
