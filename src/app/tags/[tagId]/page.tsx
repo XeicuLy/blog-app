@@ -1,6 +1,5 @@
-import ArticleListItem from '@/app/_components/ArticleListItem';
+import ArticleList from '@/app/_components/ArticleList';
 import Pagination from '@/app/_components/Pagination';
-import TagItem from '@/app/_components/TagItem';
 import { getBlogs, getTag } from '@/lib/microcms';
 import { VIEW_COUNT_PER_PAGE } from '@/utils/constants';
 
@@ -21,17 +20,9 @@ export default async function Page({ params }: Props) {
   const tag = await getTag(tagId);
   if (!tag) throw new Error('Tag not found');
   return (
-    <div>
-      <p>
-        <TagItem tag={tag} hasLink={false} />
-        の記事一覧
-      </p>
-      <ul>
-        {contents.map((article) => (
-          <ArticleListItem key={article.id} article={article} />
-        ))}
-      </ul>
-      <Pagination totalCount={data.totalCount} />
-    </div>
+    <>
+      <ArticleList articles={contents} />
+      <Pagination totalCount={data.totalCount} basePath={`/tags/${tagId}`} />
+    </>
   );
 }
