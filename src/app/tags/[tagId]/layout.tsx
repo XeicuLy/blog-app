@@ -11,6 +11,8 @@ type Props = {
 export default async function TagsLayout({ children, params }: Props) {
   const { tagId } = params;
   const tag = await getTag(tagId);
+  if (!tag) throw new Error('not found');
+
   return (
     <div>
       <p>

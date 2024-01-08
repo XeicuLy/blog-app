@@ -16,10 +16,10 @@ export default async function Page({ params }: Props) {
     limit: VIEW_COUNT_PER_PAGE,
     filters: `tags[contains]${tagId}`,
   });
-  if (!data) throw new Error('not found');
+  if (!data) throw new Error('Blog data not found');
   const { contents } = data;
   const tag = await getTag(tagId);
-  if (!tag) throw new Error('not found');
+  if (!tag) throw new Error('Tag not found');
   return (
     <div>
       <p>
