@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import Profile from '@/app/_components/Profile';
 import TagList from '@/app/_components/TagList';
+import Thumbnail from '@/app/_components/Thumbnail';
 import { formatDate } from '@/lib/date';
 import { formatRichText } from '@/lib/format';
 import { type Article } from '@/lib/microcms';
@@ -23,29 +24,11 @@ const Article = ({ data }: Props) => {
           <time>{formatDate(data.publishedAt || data.createdAt)}</time>
         </div>
       </div>
-      <picture>
-        {data.thumbnail ? (
-          <>
-            <source
-              type='image/webp'
-              media='(max-width: 640px)'
-              srcSet={`${data.thumbnail.url}?fm=webp&w=414 1x, ${data.thumbnail.url}?fm=webp&w=414&dpr=2 2x`}
-            />
-            <source
-              type='image/webp'
-              srcSet={`${data.thumbnail.url}?fm=webp&fit=crop&w=960&h=504 1x, ${data.thumbnail.url}?fm=webp&fit=crop&w=960&h=504&dpr=2 2x`}
-            />
-            <Image
-              src={data.thumbnail.url}
-              alt={data.title}
-              width={data.thumbnail.width}
-              height={data.thumbnail.height}
-            />
-          </>
-        ) : (
-          <Image src='/no-image.png' alt='No Image' width={500} height={500} />
-        )}
-      </picture>
+      {data.thumbnail ? (
+        <Thumbnail data={data} />
+      ) : (
+        <Image src='/no-image.png' alt='No Image' width={500} height={500} />
+      )}
       <div
         className={styles.content}
         dangerouslySetInnerHTML={{
