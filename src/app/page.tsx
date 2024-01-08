@@ -1,4 +1,4 @@
-import ListItem from '@/app/_components/ListItem';
+import ArticleListItem from '@/app/_components/ArticleListItem';
 import Pagination from '@/app/_components/Pagination';
 import { getBlogs } from '@/lib/microcms';
 import { VIEW_COUNT_PER_PAGE } from '@/utils/constants';
@@ -16,7 +16,7 @@ export default async function Home() {
     <div>
       <ul>
         {contents.map((article) => (
-          <ListItem key={article.id} article={article} />
+          <ArticleListItem key={article.id} article={article} />
         ))}
       </ul>
       <Pagination totalCount={data.totalCount} />
