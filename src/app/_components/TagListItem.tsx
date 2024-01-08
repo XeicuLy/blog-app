@@ -7,11 +7,11 @@ type Props = {
   hasLink?: boolean;
 };
 
-const TagItem = ({ tag, hasLink = true }: Props) => {
+const TagListItem = ({ tag, hasLink = true }: Props) => {
   if (hasLink) {
     return <Link href={`/tags/${tag.id}`}>#{tag.name}</Link>;
   }
   return <span>#{tag.name}</span>;
 };
 
-export default TagItem;
+export default TagListItem;

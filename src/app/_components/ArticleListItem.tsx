@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Tag from '@/app/_components/Tag';
+import TagList from '@/app/_components/TagList';
 import { formatDate } from '@/lib/date';
 import { Article } from '@/lib/microcms';
 
@@ -37,7 +37,7 @@ const ArticleListItem = ({ article }: Props) => {
         <dl>
           <dt>{article.title}</dt>
           <dd>
-            <Tag tags={article.tags} hasLink={false} />
+            <TagList tags={article.tags} hasLink={false} />
           </dd>
           <dd>{formatDate(article.publishedAt || article.createdAt)}</dd>
         </dl>
