@@ -18,6 +18,7 @@ type Author = {
 export type Blog = {
   id: MicroCMSContentId;
   title: string;
+  description?: string;
   content: string;
   thumbnail?: MicroCMSImage;
   tags?: Tag[];
