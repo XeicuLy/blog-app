@@ -1,5 +1,5 @@
 import ArticleList from '@/app/_components/ArticleList';
-import Pagination from '@/app/_components/Pagination';
+import Pagination from '@/app/_components/common/Pagination';
 import { getBlogs, getTag } from '@/lib/microcms';
 import { VIEW_COUNT_PER_PAGE } from '@/utils/constants';
 

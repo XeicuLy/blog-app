@@ -1,5 +1,5 @@
 import ArticleList from '@/app/_components/ArticleList';
-import Pagination from '@/app/_components/Pagination';
+import Pagination from '@/app/_components/common/Pagination';
 import { getBlogs } from '@/lib/microcms';
 
 type Props = {
