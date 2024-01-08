@@ -1,3 +1,4 @@
+import Profile from '@/app/_components/Profile';
 import TagList from '@/app/_components/TagList';
 import { formatDate } from '@/lib/date';
 import { formatRichText } from '@/lib/format';
@@ -15,23 +16,7 @@ const Article = ({ data }: Props) => {
       <h1>{data.title}</h1>
       <TagList tags={data.tags} />
       <div>
-        {data.author && (
-          <div>
-            <picture>
-              <source
-                type='image/webp'
-                srcSet={`${data.author?.image?.url}?fm=webp&fit=crop&w=48&h=48 1x, ${data.author?.image?.url}?fm=webp&fit=crop&w=48&h=48&dpr=2 2x`}
-              />
-              <img
-                src={data.author?.image?.url}
-                alt={data.author?.name}
-                width={data.author?.image?.width}
-                height={data.author?.image?.height}
-              />
-            </picture>
-            <span>{data.author?.name}</span>
-          </div>
-        )}
+        <Profile />
         <div>
           <time>{formatDate(data.publishedAt || data.createdAt)}</time>
         </div>
