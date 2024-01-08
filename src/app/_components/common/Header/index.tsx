@@ -12,7 +12,7 @@ const Header = ({ tags }: Props) => {
   return (
     <header className='border-2 border-gray-200 px-2 py-3'>
       <Link className='inline-block' href='/'>
-        <Image src='/logo.png' alt='アイコン' width={64} height={64} priority />
+        <Image src='/logo.png' alt='アイコン' width={48} height={48} priority />
       </Link>
       <Navigation tags={tags} />
     </header>
