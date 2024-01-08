@@ -8,13 +8,6 @@ export type Tag = {
 } & MicroCMSContentId &
   MicroCMSDate;
 
-type Author = {
-  name: string;
-  profile: string;
-  image?: MicroCMSImage;
-} & MicroCMSContentId &
-  MicroCMSDate;
-
 export type Blog = {
   id: MicroCMSContentId;
   title: string;
@@ -22,7 +15,6 @@ export type Blog = {
   content: string;
   thumbnail?: MicroCMSImage;
   tags?: Tag[];
-  author?: Author;
   createdAt: string;
   publishedAt: string;
   updatedAt: string;

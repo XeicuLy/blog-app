@@ -1,7 +1,14 @@
 /** @type {import("next").NextConfig} */
 const config = {
   images: {
-    domains: ['images.microcms-assets.io'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.microcms-assets.io',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 
