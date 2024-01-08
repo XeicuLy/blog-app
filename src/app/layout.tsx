@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '言いたいだけブログ',
     description: 'エンジニアがただ言いたいことを言うブログアプリ',
-    images: [{ url: '/no-image.png' }],
+    images: [{ url: process.env.NO_IMAGE_PATH as string }],
   },
   alternates: {
     canonical: '/',
