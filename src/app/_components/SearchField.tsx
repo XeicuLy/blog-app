@@ -15,7 +15,7 @@ const SearchField = () => {
     [composing],
   );
   const inputRef = useRef<HTMLInputElement>(null);
-  const url = new URL(location.href);
+
   return (
     <input
       type='search'
@@ -25,7 +25,6 @@ const SearchField = () => {
       onKeyDown={_onEnter}
       onCompositionStart={startComposition}
       onCompositionEnd={endComposition}
-      defaultValue={url.searchParams.get('q') || ''}
     />
   );
 };
