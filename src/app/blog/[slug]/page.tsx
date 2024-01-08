@@ -13,6 +13,7 @@ export const revalidate = 0;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = await getBlog(params.slug);
+  if (!data) throw new Error('not found');
 
   return {
     title: data.title,
