@@ -1,6 +1,7 @@
-import { getBlog } from '@/lib/microcms';
-import Article from '@app/_components/Article';
 import { notFound } from 'next/navigation';
+
+import Article from '@/app/_components/Article';
+import { getBlog } from '@/lib/microcms';
 
 interface Props {
   searchParams: {

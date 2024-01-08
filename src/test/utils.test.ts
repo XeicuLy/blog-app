@@ -1,5 +1,6 @@
-import { cn } from '@/lib/utils';
 import { describe, expect, it } from 'vitest';
+
+import { cn } from '@/lib/utils';
 
 describe('src/lib/utils.ts', () => {
   it('偽値を無視する', () => {

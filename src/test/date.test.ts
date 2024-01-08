@@ -1,5 +1,6 @@
-import { formatDate } from '@/lib/date';
 import { expect, test } from 'vitest';
+
+import { formatDate } from '@/lib/date';
 
 test('formatDateはUTCの日付文字列を正しくJSTにフォーマットする', () => {
   const date = '2022-01-01T00:00:00Z'; // これはJSTで '2022-01-01T09:00:00+09:00' に相当します

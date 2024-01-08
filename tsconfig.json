@@ -23,6 +23,15 @@
       "@app/*": ["./src/app/*"]
     }
   },
-  "include": ["eslint.config.mjs", "next-env.d.ts", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    ".eslintrc.cjs",
+    "prettier.config.mjs",
+    "next-env.d.ts",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
