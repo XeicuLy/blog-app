@@ -1,8 +1,9 @@
-import { formatDate } from '@/lib/date';
-import { Article } from '@/lib/microcms';
-import Tag from '@app/_components/Tag';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import Tag from '@/app/_components/Tag';
+import { formatDate } from '@/lib/date';
+import { Article } from '@/lib/microcms';
 
 type Props = {
   article: Article;

@@ -1,7 +1,8 @@
+import Tag from '@/app/_components/Tag';
 import { formatDate } from '@/lib/date';
 import { type Article } from '@/lib/microcms';
 import { formatRichText } from '@/lib/parse';
-import Tag from '@app/_components/Tag';
+
 import styles from './index.module.css';
 
 type Props = {

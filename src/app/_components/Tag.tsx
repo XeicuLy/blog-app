@@ -1,5 +1,5 @@
+import TagItem from '@/app/_components/TagItem';
 import { type Tag } from '@/lib/microcms';
-import TagItem from '@app/_components/TagItem';
 
 type Props = {
   tags?: Tag[];

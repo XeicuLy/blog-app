@@ -1,5 +1,6 @@
-import { Tag } from '@/lib/microcms';
 import Link from 'next/link';
+
+import { Tag } from '@/lib/microcms';
 
 type Props = {
   tag: Tag;
