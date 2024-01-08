@@ -1,7 +1,7 @@
 import TagList from '@/app/_components/TagList';
 import { formatDate } from '@/lib/date';
+import { formatRichText } from '@/lib/format';
 import { type Article } from '@/lib/microcms';
-import { formatRichText } from '@/lib/parse';
 
 import styles from './index.module.css';
 

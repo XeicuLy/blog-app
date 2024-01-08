@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 
-import { formatRichText } from '@/lib/parse';
+import { formatRichText } from '@/lib/format';
 
 test('formatRichText 正しくリッチテキストをフォーマットする', () => {
   const richText = `<pre><code>const hello = "world";</code></pre>`;
