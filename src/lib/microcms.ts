@@ -27,7 +27,7 @@ export type Blog = {
   updatedAt: string;
 };
 
-export type Article = Blog & MicroCMSDate;
+export type Article = Blog & MicroCMSContentId & MicroCMSDate;
 
 if (!process.env.MICRO_CMS_SERVICE_DOMAIN) {
   throw new Error('MICRO_CMS_SERVICE_DOMAIN is required');

@@ -9,7 +9,7 @@ type Props = {
   article: Article;
 };
 
-const ListItem = ({ article }: Props) => {
+const ArticleListItem = ({ article }: Props) => {
   return (
     <li>
       <Link href={`/blog/${article.id}`}>
@@ -46,4 +46,4 @@ const ListItem = ({ article }: Props) => {
   );
 };
 
-export default ListItem;
+export default ArticleListItem;
