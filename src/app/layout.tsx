@@ -41,7 +41,7 @@ export default async function RootLayout({ children }: Props) {
       <body className={inter.className}>
         <Header />
         <Navigation tags={contents} />
-        <main>{children}</main>
+        <main className='bg-green-50'>{children}</main>
         <Footer />
       </body>
     </html>
