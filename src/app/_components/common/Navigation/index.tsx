@@ -8,11 +8,11 @@ type Props = {
 
 const Navigation = ({ tags }: Props) => {
   return (
-    <nav className='flex flex-col items-center'>
-      <div className='w-4/5 py-2'>
+    <nav className='flex flex-col items-center py-4'>
+      <div className='w-1/2'>
         <SearchField />
       </div>
-      <div className='py-2'>
+      <div className='pt-4'>
         <TagList tags={tags} />
       </div>
     </nav>
