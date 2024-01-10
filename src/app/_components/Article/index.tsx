@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { CiClock2 } from 'react-icons/ci';
 
 import Profile from '@/app/_components/Profile';
 import TagList from '@/app/_components/TagList';
@@ -25,7 +26,8 @@ const Article = ({ data }: Props) => {
           <div className='border-r pr-6'>
             <Profile />
           </div>
-          <div className='ml-6'>
+          <div className='ml-6 flex items-center gap-1'>
+            <CiClock2 />
             <time>{formatDate(data.publishedAt || data.createdAt)}</time>
           </div>
         </div>

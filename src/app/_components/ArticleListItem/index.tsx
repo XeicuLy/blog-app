@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { CiClock2 } from 'react-icons/ci';
 
 import TagList from '@/app/_components/TagList';
 import Thumbnail from '@/app/_components/Thumbnail';
@@ -12,8 +13,8 @@ type Props = {
 
 const ArticleListItem = ({ article }: Props) => {
   return (
-    <li className='flex justify-center rounded-md border-2'>
-      <Link className='flex p-8' href={`/blog/${article.id}`}>
+    <li className='flex justify-center'>
+      <Link className='flex rounded-md border-2 p-8' href={`/blog/${article.id}`}>
         <div className='w-64'>
           {article.thumbnail ? (
             <Thumbnail data={article} />
@@ -27,7 +28,10 @@ const ArticleListItem = ({ article }: Props) => {
             <dd className='mb-4'>
               <TagList tags={article.tags} hasLink={false} />
             </dd>
-            <dd>{formatDate(article.publishedAt || article.createdAt)}</dd>
+            <dd className='flex items-center gap-1'>
+              <CiClock2 />
+              <time>{formatDate(article.publishedAt || article.createdAt)}</time>
+            </dd>
           </dl>
         </div>
       </Link>
