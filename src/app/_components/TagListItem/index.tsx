@@ -9,7 +9,7 @@ type Props = {
 
 const TagListItem = ({ tag, hasLink = true }: Props) => {
   const tagElement = (
-    <span className='whitespace-nowrap rounded bg-gray-200 px-2 py-1 text-sm transition-colors duration-300 hover:bg-gray-300'>
+    <span className='whitespace-nowrap rounded bg-gray-200 px-2 py-1 text-sm text-gray-700 transition-colors duration-300 hover:bg-gray-300'>
       #{tag.name}
     </span>
   );
