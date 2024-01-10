@@ -21,7 +21,7 @@ const CustomPagination = ({ totalCount, current = 1, basePath = '', q }: Props) 
   const isFirstPage = current === 1;
   const isLastPage = current === pages.length;
 
-  const createPageUrl = (page: number) => `${basePath}/p/${page}` + (q ? `?q=${q}` : '');
+  const createPageUrl = (page: number) => `${basePath}/${page}` + (q ? `?q=${q}` : '');
 
   return (
     <Pagination className='pt-4'>
