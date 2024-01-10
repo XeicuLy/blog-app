@@ -36,7 +36,7 @@ const Article = ({ data }: Props) => {
             <Image className='w-full' src='/no-image.png' alt='No Image' width={500} height={500} />
           )}
         </div>
-        <div className='mx-auto my-0 w-11/12'>
+        <div className='mx-auto my-0 w-10/12'>
           <div
             className={styles.content}
             dangerouslySetInnerHTML={{
