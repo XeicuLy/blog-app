@@ -12,7 +12,7 @@ const TagList = ({ tags, hasLink = true }: Props) => {
   }
 
   return (
-    <ul>
+    <ul className='flex flex-wrap gap-2'>
       {tags.map((tag) => (
         <li key={tag.id}>
           <TagListItem tag={tag} hasLink={hasLink} />

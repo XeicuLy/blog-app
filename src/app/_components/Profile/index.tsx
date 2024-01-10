@@ -1,14 +1,18 @@
 const Profile = () => {
   return (
-    <div>
-      <picture>
-        <source
-          type='image/webp'
-          srcSet={`/icon.png?fm=webp&fit=crop&w=48&h=48 1x, /icon.png?fm=webp&fit=crop&w=48&h=48&dpr=2 2x`}
-        />
-        <img src='/icon.png' alt='アイコン' width={50} height={50} />
-      </picture>
-      <span>柿</span>
+    <div className='flex'>
+      <div className='h-16 w-16'>
+        <picture>
+          <source
+            type='image/webp'
+            srcSet={`/icon.png?fm=webp&fit=crop&w=48&h=48 1x, /icon.png?fm=webp&fit=crop&w=48&h=48&dpr=2 2x`}
+          />
+          <img src='/icon.png' alt='アイコン' width={64} height={64} />
+        </picture>
+      </div>
+      <div className='ml-6 flex items-center'>
+        <span>柿</span>
+      </div>
     </div>
   );
 };

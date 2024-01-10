@@ -3,6 +3,8 @@
 import { useSearchParams } from 'next/navigation';
 import { useCallback, useRef, useState } from 'react';
 
+import { Input } from '@/app/_components/ui/input';
+
 const SearchField = () => {
   const [composing, setComposition] = useState(false);
   const startComposition = () => setComposition(true);
@@ -20,11 +22,11 @@ const SearchField = () => {
   const defaultQuery = searchParams.get('q') || '';
 
   return (
-    <input
+    <Input
       type='search'
       name='q'
       ref={inputRef}
-      placeholder='Search...'
+      placeholder='タグを検索する'
       onKeyDown={_onEnter}
       onCompositionStart={startComposition}
       onCompositionEnd={endComposition}

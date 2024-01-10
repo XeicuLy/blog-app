@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer>
-      <p>© XEICULY.com All Rights Reserved 2023</p>
+    <footer className='py-4 text-center'>
+      <p className='text-gray-500'>© PiYoPiYo.com All Rights Reserved 2024</p>
     </footer>
   );
 };

@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import Profile from '@/app/_components/Profile';
 import TagList from '@/app/_components/TagList';
+import Thumbnail from '@/app/_components/Thumbnail';
 import { formatDate } from '@/lib/date';
 import { formatRichText } from '@/lib/format';
 import { type Article } from '@/lib/microcms';
@@ -14,45 +15,37 @@ type Props = {
 
 const Article = ({ data }: Props) => {
   return (
-    <main>
-      <h1>{data.title}</h1>
-      <TagList tags={data.tags} />
-      <div>
-        <Profile />
-        <div>
-          <time>{formatDate(data.publishedAt || data.createdAt)}</time>
+    <article className='mx-auto my-0 max-w-5xl px-12'>
+      <div className='rounded-2xl bg-white py-4'>
+        <h1 className='flex justify-center pb-4 text-4xl font-bold text-gray-700'>{data.title}</h1>
+        <div className='flex justify-center gap-2 pb-6'>
+          <TagList tags={data.tags} />
+        </div>
+        <div className='flex items-center justify-center'>
+          <div className='border-r pr-6'>
+            <Profile />
+          </div>
+          <div className='ml-6'>
+            <time>{formatDate(data.publishedAt || data.createdAt)}</time>
+          </div>
+        </div>
+        <div className='flex justify-center'>
+          {data.thumbnail ? (
+            <Thumbnail data={data} />
+          ) : (
+            <Image className='w-full' src='/no-image.png' alt='No Image' width={500} height={500} />
+          )}
+        </div>
+        <div className='mx-auto my-0 w-11/12'>
+          <div
+            className={styles.content}
+            dangerouslySetInnerHTML={{
+              __html: `${formatRichText(data.content)}`,
+            }}
+          />
         </div>
       </div>
-      <picture>
-        {data.thumbnail ? (
-          <>
-            <source
-              type='image/webp'
-              media='(max-width: 640px)'
-              srcSet={`${data.thumbnail.url}?fm=webp&w=414 1x, ${data.thumbnail.url}?fm=webp&w=414&dpr=2 2x`}
-            />
-            <source
-              type='image/webp'
-              srcSet={`${data.thumbnail.url}?fm=webp&fit=crop&w=960&h=504 1x, ${data.thumbnail.url}?fm=webp&fit=crop&w=960&h=504&dpr=2 2x`}
-            />
-            <Image
-              src={data.thumbnail.url}
-              alt={data.title}
-              width={data.thumbnail.width}
-              height={data.thumbnail.height}
-            />
-          </>
-        ) : (
-          <Image src='/no-image.png' alt='No Image' width={500} height={500} />
-        )}
-      </picture>
-      <div
-        className={styles.content}
-        dangerouslySetInnerHTML={{
-          __html: `${formatRichText(data.content)}`,
-        }}
-      />
-    </main>
+    </article>
   );
 };
 

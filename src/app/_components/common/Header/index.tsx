@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header>
-      <Link href='/'>
-        <Image src='/logo.png' alt='アイコン' width={50} height={50} priority />
+    <header className='px-2 py-2'>
+      <Link className='inline-block' href='/'>
+        <Image src='/logo.png' alt='アイコン' width={48} height={48} priority />
       </Link>
     </header>
   );

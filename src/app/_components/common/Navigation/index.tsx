@@ -8,9 +8,13 @@ type Props = {
 
 const Navigation = ({ tags }: Props) => {
   return (
-    <nav>
-      <SearchField />
-      <TagList tags={tags} />
+    <nav className='flex flex-col items-center pb-4'>
+      <div className='w-600 sm:w-80'>
+        <SearchField />
+      </div>
+      <div className='pt-4'>
+        <TagList tags={tags} />
+      </div>
     </nav>
   );
 };

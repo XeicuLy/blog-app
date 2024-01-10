@@ -36,8 +36,10 @@
 
     /* custom set */
     --color-border: #ccc;
-    --color-bg-code: #fafafa;
-    --border-radius: 8px;
+    --color-bg-code: #f9f9f9;
+    --border-radius: 4px;
+    --color-text-sub: #999;
+    --color-bg-sub: #f3f3f3;
   }
 
   .dark {
