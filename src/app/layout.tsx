@@ -13,10 +13,10 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
-  title: '言いたいだけブログ',
+  title: 'PiYoPiYo.com',
   description: 'エンジニアがただ言いたいことを言うブログアプリ',
   openGraph: {
-    title: '言いたいだけブログ',
+    title: 'PiYoPiYo.com',
     description: 'エンジニアがただ言いたいことを言うブログアプリ',
     images: [{ url: process.env.NO_IMAGE_PATH as string }],
   },
@@ -41,7 +41,7 @@ export default async function RootLayout({ children }: Props) {
       <body className={inter.className}>
         <Header />
         <Navigation tags={contents} />
-        <main className='bg-green-50 py-12'>{children}</main>
+        <main className='bg-green-100 py-12'>{children}</main>
         <Footer />
       </body>
     </html>
