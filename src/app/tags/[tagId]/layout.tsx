@@ -16,8 +16,8 @@ export default async function TagsLayout({ children, params }: Props) {
   if (!tag) throw new Error('not found');
 
   return (
-    <div>
-      <p>
+    <div className='flex flex-col items-center justify-center'>
+      <p className='mb-6'>
         <TagListItem tag={tag} hasLink={false} />
         の記事一覧
       </p>
