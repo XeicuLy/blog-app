@@ -12,8 +12,8 @@ type Props = {
 
 const ArticleListItem = ({ article }: Props) => {
   return (
-    <li className='flex justify-center'>
-      <Link className='flex' href={`/blog/${article.id}`}>
+    <li className='flex justify-center rounded-md border-2'>
+      <Link className='flex p-8' href={`/blog/${article.id}`}>
         <div className='w-64'>
           {article.thumbnail ? (
             <Thumbnail data={article} />
