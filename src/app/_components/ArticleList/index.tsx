@@ -10,7 +10,7 @@ const ArticleList = ({ articles }: Props) => {
   if (articles.length === 0) return <p>記事がありません。</p>;
 
   return (
-    <ul>
+    <ul className=''>
       {articles.map((article) => (
         <ArticleListItem key={article.id} article={article} />
       ))}
