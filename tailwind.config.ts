@@ -79,6 +79,9 @@ const config = {
         '760': '760px',
         '800': '800px',
       },
+      spacing: {
+        '600': '600px',
+      },
     },
     screens: {
       xl: { max: '1279px' },
