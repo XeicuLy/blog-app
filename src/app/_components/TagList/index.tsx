@@ -12,13 +12,15 @@ const TagList = ({ tags, hasLink = true }: Props) => {
   }
 
   return (
-    <ul className='flex flex-wrap gap-2'>
-      {tags.map((tag) => (
-        <li key={tag.id}>
-          <TagListItem tag={tag} hasLink={hasLink} />
-        </li>
-      ))}
-    </ul>
+    <div className='w-auto max-w-600 overflow-auto'>
+      <ul className='inline-flex gap-2'>
+        {tags.map((tag) => (
+          <li key={tag.id}>
+            <TagListItem tag={tag} hasLink={hasLink} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
