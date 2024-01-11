@@ -18,15 +18,20 @@ type Props = {
 
 const CustomPagination = ({ totalCount, current = 1, basePath = '', q }: Props) => {
   const pages = Array.from({ length: Math.ceil(totalCount / VIEW_COUNT_PER_PAGE) }).map((_, i) => i + 1);
+
   const isFirstPage = current === 1;
   const isLastPage = current === pages.length;
+  const isNoArticles = totalCount === 0;
+
+  const shouldShowPrev = !isFirstPage && !isNoArticles;
+  const shouldShowNext = !isLastPage && !isNoArticles;
 
   const createPageUrl = (page: number) => `${basePath}/${page}` + (q ? `?q=${q}` : '');
 
   return (
     <Pagination className='pt-4'>
       <PaginationContent>
-        {!isFirstPage && (
+        {shouldShowPrev && (
           <PaginationItem>
             <PaginationPrevious href={createPageUrl(current - 1)} />
           </PaginationItem>
@@ -43,7 +48,7 @@ const CustomPagination = ({ totalCount, current = 1, basePath = '', q }: Props) 
             {index !== pages.length - 1 && <PaginationEllipsis />}
           </PaginationItem>
         ))}
-        {!isLastPage && (
+        {shouldShowNext && (
           <PaginationItem>
             <PaginationNext href={createPageUrl(current + 1)} />
           </PaginationItem>
