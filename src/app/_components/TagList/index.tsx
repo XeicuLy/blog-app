@@ -4,15 +4,16 @@ import { Tag } from '@/lib/microcms';
 type Props = {
   tags?: Tag[];
   hasLink?: boolean;
+  maxWidth?: string;
 };
 
-const TagList = ({ tags, hasLink = true }: Props) => {
+const TagList = ({ tags, hasLink = true, maxWidth = 'max-w-600' }: Props) => {
   if (!tags) {
     return null;
   }
 
   return (
-    <div className='w-auto max-w-600 overflow-auto'>
+    <div className={`w-auto ${maxWidth} overflow-auto`}>
       <ul className='inline-flex gap-2'>
         {tags.map((tag) => (
           <li key={tag.id}>

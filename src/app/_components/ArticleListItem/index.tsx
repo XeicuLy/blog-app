@@ -26,7 +26,7 @@ const ArticleListItem = ({ article }: Props) => {
           <dl>
             <dt className='mb-5 text-xl font-bold'>{article.title}</dt>
             <dd className='mb-4'>
-              <TagList tags={article.tags} hasLink={false} />
+              <TagList tags={article.tags} hasLink={false} maxWidth='max-w-146' />
             </dd>
             <dd className='flex items-center gap-1'>
               <CiClock2 />
