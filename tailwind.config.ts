@@ -5,6 +5,9 @@ const config = {
   content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
   prefix: '',
   theme: {
+    fontFamily: {
+      sans: ['var(--font-noto-sans-jp)'], // font-sans クラスに適用
+    },
     container: {
       center: true,
       padding: '2rem',
