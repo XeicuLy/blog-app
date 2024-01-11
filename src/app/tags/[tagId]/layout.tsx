@@ -30,9 +30,9 @@ export default async function TagsLayout({ children, params }: Props) {
       <Navigation tags={tags.contents} />
       <main className='bg-green-100 py-12'>
         <div className='flex flex-col items-center justify-center'>
-          <p className='mb-6'>
+          <p className='mb-6 flex items-center justify-center'>
             <TagListItem tag={tag} hasLink={false} />
-            の記事一覧
+            <span className='ml-2'>の記事一覧</span>
           </p>
           <div>{children}</div>
         </div>
