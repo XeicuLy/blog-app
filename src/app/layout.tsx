@@ -1,9 +1,9 @@
 import '@/styles/globals.css';
-import { Inter } from 'next/font/google';
+import { Noto_Sans_JP } from 'next/font/google';
 
 import type { Metadata } from 'next';
 
-const inter = Inter({ subsets: ['latin'] });
+const notoSansJP = Noto_Sans_JP({ subsets: ['latin'], variable: '--font-noto-sans-jp' });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
@@ -26,7 +26,7 @@ type Props = {
 export default async function RootLayout({ children }: Props) {
   return (
     <html lang='ja'>
-      <body className={inter.className}>{children}</body>
+      <body className={notoSansJP.className}>{children}</body>
     </html>
   );
 }

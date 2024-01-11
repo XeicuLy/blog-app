@@ -2,7 +2,7 @@ import Footer from '@/app/_components/common/Footer';
 import Header from '@/app/_components/common/Header';
 import Navigation from '@/app/_components/common/Navigation';
 import { getTagList } from '@/lib/microcms';
-import { VIEW_COUNT_PER_PAGE } from '@/utils/constants';
+import { TAGS_LIMIT } from '@/utils/constants';
 
 type Props = {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ type Props = {
 
 export default async function SearchLayout({ children }: Props) {
   const tags = await getTagList({
-    limit: VIEW_COUNT_PER_PAGE,
+    limit: TAGS_LIMIT,
   });
   if (!tags) throw new Error('Tag data not found');
 

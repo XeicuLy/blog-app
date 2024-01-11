@@ -4,7 +4,7 @@ import Header from '@/app/_components/common/Header';
 import Navigation from '@/app/_components/common/Navigation';
 import Pagination from '@/app/_components/common/Pagination';
 import { getBlogs, getTagList } from '@/lib/microcms';
-import { VIEW_COUNT_PER_PAGE } from '@/utils/constants';
+import { TAGS_LIMIT, VIEW_COUNT_PER_PAGE } from '@/utils/constants';
 
 export const revalidate = 0;
 
@@ -15,7 +15,7 @@ export default async function Home() {
   if (!data) throw new Error('not found');
 
   const tags = await getTagList({
-    limit: VIEW_COUNT_PER_PAGE,
+    limit: TAGS_LIMIT,
   });
   if (!tags) throw new Error('Tag data not found');
 

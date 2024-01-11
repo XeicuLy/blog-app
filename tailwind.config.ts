@@ -5,6 +5,9 @@ const config = {
   content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
   prefix: '',
   theme: {
+    fontFamily: {
+      sans: ['var(--font-noto-sans-jp)'], // font-sans クラスに適用
+    },
     container: {
       center: true,
       padding: '2rem',
@@ -78,6 +81,10 @@ const config = {
         '720': '720px',
         '760': '760px',
         '800': '800px',
+      },
+      spacing: {
+        '146': '146px',
+        '600': '600px',
       },
     },
     screens: {
