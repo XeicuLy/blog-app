@@ -11,7 +11,7 @@ const Profile = () => {
         </picture>
       </div>
       <div className='ml-6 flex items-center'>
-        <span>柿</span>
+        <span className='text-gray-700'>柿</span>
       </div>
     </div>
   );

@@ -28,7 +28,7 @@ const Article = ({ data }: Props) => {
           </div>
           <div className='ml-6 flex items-center gap-1'>
             <CiClock2 />
-            <time>{formatDate(data.publishedAt || data.createdAt)}</time>
+            <time className='text-gray-700'>{formatDate(data.publishedAt || data.createdAt)}</time>
           </div>
         </div>
         <div className='flex justify-center'>
