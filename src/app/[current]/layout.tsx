@@ -8,7 +8,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default async function SearchLayout({ children }: Props) {
+export default async function CurrentLayout({ children }: Props) {
   const tags = await getTagList({
     limit: TAGS_LIMIT,
   });
