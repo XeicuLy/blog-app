@@ -9,7 +9,7 @@ type Props = {
   };
 };
 
-export const revalidate = 0;
+export const revalidate = 86400;
 
 export default async function Page({ params }: Props) {
   const { tagId } = params;

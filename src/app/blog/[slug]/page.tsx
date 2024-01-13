@@ -12,7 +12,7 @@ type Props = {
   };
 };
 
-export const revalidate = 0;
+export const revalidate = 86400;
 
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const data = await getBlog(params.slug, {

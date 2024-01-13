@@ -6,7 +6,7 @@ import Pagination from '@/app/_components/common/Pagination';
 import { getBlogs, getTagList } from '@/lib/microcms';
 import { TAGS_LIMIT, VIEW_COUNT_PER_PAGE } from '@/utils/constants';
 
-export const revalidate = 0;
+export const revalidate = 86400;
 
 export default async function Home() {
   const data = await getBlogs({
