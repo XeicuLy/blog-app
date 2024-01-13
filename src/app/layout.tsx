@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  robots: {
+    index: false,
+  },
 };
 
 type Props = {
