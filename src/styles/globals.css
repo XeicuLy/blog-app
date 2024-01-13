@@ -33,6 +33,13 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    /* custom set */
+    --color-border: #ccc;
+    --color-bg-code: #f9f9f9;
+    --border-radius: 4px;
+    --color-text-sub: #999;
+    --color-bg-sub: #f3f3f3;
   }
 
   .dark {

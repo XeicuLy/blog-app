@@ -5,6 +5,9 @@ const config = {
   content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
   prefix: '',
   theme: {
+    fontFamily: {
+      sans: ['var(--font-noto-sans-jp)'], // font-sans クラスに適用
+    },
     container: {
       center: true,
       padding: '2rem',
@@ -67,6 +70,35 @@ const config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      width: {
+        '440': '440px',
+        '480': '480px',
+        '520': '520px',
+        '560': '560px',
+        '600': '600px',
+        '640': '640px',
+        '680': '680px',
+        '720': '720px',
+        '760': '760px',
+        '800': '800px',
+      },
+      spacing: {
+        '146': '146px',
+        '600': '600px',
+      },
+    },
+    screens: {
+      xl: { max: '1279px' },
+      // => @media (max-width: 1279px) { ... }
+
+      lg: { max: '1023px' },
+      // => @media (max-width: 1023px) { ... }
+
+      md: { max: '767px' },
+      // => @media (max-width: 767px) { ... }
+
+      sm: { max: '639px' },
+      // => @media (max-width: 639px) { ... }
     },
   },
   plugins: [require('tailwindcss-animate')],
