@@ -6,7 +6,7 @@ import TagList from '@/app/_components/TagList';
 import Thumbnail from '@/app/_components/Thumbnail';
 import { formatDate } from '@/lib/date';
 import { formatRichText } from '@/lib/format';
-import { type Article } from '@/lib/microcms';
+import { Article } from '@/types/microcms';
 
 import styles from './index.module.css';
 

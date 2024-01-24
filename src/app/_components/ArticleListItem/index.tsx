@@ -5,7 +5,7 @@ import { CiClock2 } from 'react-icons/ci';
 import TagList from '@/app/_components/TagList';
 import Thumbnail from '@/app/_components/Thumbnail';
 import { formatDate } from '@/lib/date';
-import { Article } from '@/lib/microcms';
+import { Article } from '@/types/microcms';
 
 type Props = {
   article: Article;

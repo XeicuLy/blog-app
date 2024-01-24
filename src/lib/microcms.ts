@@ -1,26 +1,9 @@
 import { createClient } from 'microcms-js-sdk';
 import { notFound } from 'next/navigation';
 
-import type { MicroCMSContentId, MicroCMSDate, MicroCMSImage, MicroCMSQueries } from 'microcms-js-sdk';
+import { Blog, Tag } from '@/types/microcms';
 
-export type Tag = {
-  name: string;
-} & MicroCMSContentId &
-  MicroCMSDate;
-
-export type Blog = {
-  id: MicroCMSContentId;
-  title: string;
-  description?: string;
-  content: string;
-  thumbnail?: MicroCMSImage;
-  tags?: Tag[];
-  createdAt: string;
-  publishedAt: string;
-  updatedAt: string;
-};
-
-export type Article = Blog & MicroCMSContentId & MicroCMSDate;
+import type { MicroCMSQueries } from 'microcms-js-sdk';
 
 if (!process.env.MICRO_CMS_SERVICE_DOMAIN) {
   throw new Error('MICRO_CMS_SERVICE_DOMAIN is required');

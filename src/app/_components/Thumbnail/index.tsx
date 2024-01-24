@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { Article } from '@/lib/microcms';
+import { Article } from '@/types/microcms';
 
 type Props = {
   data: Article;

@@ -1,5 +1,5 @@
 import ArticleListItem from '@/app/_components/ArticleListItem';
-import { Article } from '@/lib/microcms';
+import { Article } from '@/types/microcms';
 
 type Props = {
   articles: Article[];
