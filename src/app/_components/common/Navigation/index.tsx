@@ -1,6 +1,6 @@
 import SearchField from '@/app/_components/common/SearchField';
 import TagList from '@/app/_components/TagList';
-import { Tag } from '@/lib/microcms';
+import { Tag } from '@/types/microcms';
 
 type Props = {
   tags: Tag[];

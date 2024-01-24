@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { PiTagLight } from 'react-icons/pi';
 
-import { Tag } from '@/lib/microcms';
+import { Tag } from '@/types/microcms';
 
 type Props = {
   tag: Tag;
