@@ -21,10 +21,11 @@ export default async function Page({ params, searchParams }: Props) {
     offset: VIEW_COUNT_PER_PAGE * (current - 1),
     q: searchParams.q,
   });
+  const { contents, totalCount } = data;
   return (
     <>
-      <ArticleList articles={data.contents} />
-      <Pagination totalCount={data.totalCount} current={current} basePath='/search' q={searchParams.q} />
+      <ArticleList articles={contents} />
+      <Pagination totalCount={totalCount} current={current} basePath='/search' q={searchParams.q} />
     </>
   );
 }

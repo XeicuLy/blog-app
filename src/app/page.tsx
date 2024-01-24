@@ -12,12 +12,10 @@ export default async function Home() {
   const data = await getBlogs({
     limit: VIEW_COUNT_PER_PAGE,
   });
-  if (!data) throw new Error('not found');
 
   const tags = await getTagList({
     limit: TAGS_LIMIT,
   });
-  if (!tags) throw new Error('Tag data not found');
 
   return (
     <>

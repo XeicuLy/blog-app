@@ -17,13 +17,12 @@ export default async function Page({ params }: Props) {
     limit: VIEW_COUNT_PER_PAGE,
     offset: (current - 1) * VIEW_COUNT_PER_PAGE,
   });
-  if (!data) throw new Error('not found');
-  const { contents } = data;
+  const { contents, totalCount } = data;
 
   return (
     <>
       <ArticleList articles={contents} />
-      <Pagination totalCount={data.totalCount} current={current} />
+      <Pagination totalCount={totalCount} current={current} />
     </>
   );
 }

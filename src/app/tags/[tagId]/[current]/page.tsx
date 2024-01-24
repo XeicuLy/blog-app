@@ -23,7 +23,6 @@ export default async function Page({ params }: Props) {
     offset: (current - 1) * VIEW_COUNT_PER_PAGE,
     filters: `tags[contains]${tagId}`,
   });
-  if (!data) throw new Error('Blog data not found');
   const { contents } = data;
 
   return (

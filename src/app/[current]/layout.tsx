@@ -12,12 +12,11 @@ export default async function CurrentLayout({ children }: Props) {
   const tags = await getTagList({
     limit: TAGS_LIMIT,
   });
-  if (!tags) throw new Error('Tag data not found');
-
+  const { contents } = tags;
   return (
     <>
       <Header />
-      <Navigation tags={tags.contents} />
+      <Navigation tags={contents} />
       <main className='bg-green-100 py-12'>{children}</main>
       <Footer />
     </>

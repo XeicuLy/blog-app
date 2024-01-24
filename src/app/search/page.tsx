@@ -14,12 +14,11 @@ export default async function Page({ searchParams }: Props) {
   const data = await getBlogs({
     q: searchParams.q,
   });
-  if (!data) throw new Error('Blog data not found');
-
+  const { contents, totalCount } = data;
   return (
     <>
-      <ArticleList articles={data.contents} />
-      <Pagination totalCount={data.totalCount} basePath='/search' />
+      <ArticleList articles={contents} />
+      <Pagination totalCount={totalCount} basePath='/search' />
     </>
   );
 }

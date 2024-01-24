@@ -18,15 +18,15 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const data = await getBlog(params.slug, {
     draftKey: searchParams.draftKey,
   });
-  if (!data) throw new Error('not found');
+  const { title, description, thumbnail } = data;
 
   return {
-    title: data.title,
-    description: data.description,
+    title: title,
+    description: description,
     openGraph: {
-      title: data.title,
-      description: data.description,
-      images: [data?.thumbnail?.url || (process.env.NO_IMAGE_PATH as string)],
+      title: title,
+      description: description,
+      images: [thumbnail?.url || (process.env.NO_IMAGE_PATH as string)],
     },
   };
 }
@@ -35,7 +35,6 @@ export default async function Page({ params, searchParams }: Props) {
   const blog = await getBlog(params.slug, {
     draftKey: searchParams.draftKey,
   });
-  if (!blog) throw new Error('not found');
 
   return <Article data={blog} />;
 }

@@ -16,18 +16,17 @@ export const revalidate = 86400;
 
 export default async function TagsLayout({ children, params }: Props) {
   const { tagId } = params;
-  const tag = await getTag(tagId);
-  if (!tag) throw new Error('not found');
 
+  const tag = await getTag(tagId);
   const tags = await getTagList({
     limit: TAGS_LIMIT,
   });
-  if (!tags) throw new Error('Tag data not found');
+  const { contents } = tags;
 
   return (
     <>
       <Header />
-      <Navigation tags={tags.contents} />
+      <Navigation tags={contents} />
       <main className='bg-green-100 py-12'>
         <div className='flex flex-col items-center justify-center'>
           <p className='mb-6 flex items-center justify-center'>
